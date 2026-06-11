@@ -1,0 +1,6 @@
+# Redirect old WordPress paths
+/wordpress/* /:splat 301
+/wp-admin /  302
+/wp-login.php / 302
+
+# Fix any trailing slashes (Cloudflare handles this but just in case)

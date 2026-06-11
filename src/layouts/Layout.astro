@@ -1,0 +1,122 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  slug?: string;
+}
+
+const { title, description = "TopCasinoScout — The site casinos hope you don't find first. Honest reviews, best bonuses, no fluff.", slug = "" } = Astro.props;
+const canonical = `https://topcasinoscout.com/${slug}`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | TopCasinoScout</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={`${title} | TopCasinoScout`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="tcs-nav" role="navigation" aria-label="Main navigation">
+    <div class="tcs-nav-inner">
+      <a href="/" class="tcs-nav-logo">Top<span>Casino</span>Scout</a>
+      <ul class="tcs-nav-links" id="navLinks">
+        <li><a href="/detailed-casino-reviews">Casino Reviews</a></li>
+        <li><a href="/top-casino-bonuses">Bonuses</a></li>
+        <li><a href="/no-deposit-bonuses">No Deposit</a></li>
+        <li><a href="/top-casino-rankings">Rankings</a></li>
+        <li><a href="/casino-bonus-finder">AI Finder</a></li>
+        <li><a href="/insider-articles">Articles</a></li>
+      </ul>
+      <a href="/top-casino-bonuses" class="tcs-nav-cta">Get Bonus →</a>
+      <button class="tcs-nav-hamburger" id="navToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Page content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="tcs-footer">
+    <div class="tcs-container">
+      <div class="tcs-footer-grid">
+        <div>
+          <div class="tcs-footer-brand">Top<span>Casino</span>Scout</div>
+          <p class="tcs-footer-tagline">The site casinos hope you don't find first. Independent reviews, verified bonuses, and straight-talking guides since 2024.</p>
+        </div>
+        <div class="tcs-footer-col">
+          <h4>Reviews</h4>
+          <ul>
+            <li><a href="/detailed-casino-reviews">All Reviews</a></li>
+            <li><a href="/top-casino-rankings">Rankings</a></li>
+            <li><a href="/blacklisted-online-casinos">Blacklisted</a></li>
+            <li><a href="/casino-review-guidelines">Our Process</a></li>
+          </ul>
+        </div>
+        <div class="tcs-footer-col">
+          <h4>Bonuses</h4>
+          <ul>
+            <li><a href="/top-casino-bonuses">Top Bonuses</a></li>
+            <li><a href="/no-deposit-bonuses">No Deposit</a></li>
+            <li><a href="/casino-promo-codes">Promo Codes</a></li>
+            <li><a href="/free-spin-slots">Free Spins</a></li>
+          </ul>
+        </div>
+        <div class="tcs-footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/how-we-rate-online-casinos">How We Rate</a></li>
+            <li><a href="/responsible-gambling">Responsible Gambling</a></li>
+            <li><a href="/contact-us">Contact</a></li>
+            <li><a href="/affiliate-disclosure">Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="tcs-footer-bottom">
+        <p class="tcs-footer-legal">
+          © {new Date().getFullYear()} TopCasinoScout. All rights reserved. Gambling can be addictive — please play responsibly. 
+          18+ only. <a href="/responsible-gambling">Responsible Gambling</a> · <a href="/privacy-policy">Privacy</a> · <a href="/terms-and-conditions">Terms</a> · <a href="/cookie-policy">Cookies</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a>.
+          TopCasinoScout is an independent comparison site. We may receive commission from casinos featured on this site.
+        </p>
+        <div class="tcs-footer-age" aria-label="18 plus only">18+</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('is-open');
+      });
+    }
+
+    // Fix any remaining localhost links from WP export
+    document.querySelectorAll('a[href*="localhost"]').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      const fixed = href.replace(/https?:\/\/localhost(:\d+)?(\/wordpress)?/g, '');
+      if (fixed && fixed !== href) a.setAttribute('href', fixed || '/');
+    });
+  </script>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
