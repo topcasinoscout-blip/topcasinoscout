@@ -1,74 +1,241 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const title = "Casino Rankings";
-const description = "Top Casino Rankings: Expert Reviews & Ratings Explore our expertly curated Top Casino Rankings , where we rank and review the best online casinos based ...";
-const content = "<section class=\"tcs-section tcs-section--deep-navy\" style=\"text-align:left;\">\n  <div class=\"tcs-container\">\n    <h1 class=\"tcs-heading-xl\" style=\"color:#ffcc33;\">Top Casino Rankings: Expert Reviews & Ratings</h1>\n    <p class=\"tcs-text-lead\" style=\"font-size:1rem; line-height:1.8; color:#a8c7ff;\">\n      Explore our expertly curated <strong>Top Casino Rankings</strong>, where we rank and review the best online casinos based on factors like bonuses, game selection, payout speed, and user experience. Our rankings are updated regularly, ensuring you get the most reliable and up-to-date information to make informed decisions. Whether you're looking for the highest TCS scores, the best welcome offers, or casinos that are top-rated by players and experts alike, our rankings guide you to the best platforms for your needs.\n    </p>\n    <p class=\"tcs-text-lead\" style=\"font-size:1rem; line-height:1.8; color:#a8c7ff;\">\n      Each casino in our rankings is carefully assessed by our team of industry experts, ensuring transparency and accuracy. With our comprehensive rankings, you can quickly find the best casinos based on your personal preferences, whether that\u2019s fast payouts, secure payments, or a wide variety of games. We\u2019re dedicated to providing trustworthy, unbiased information to help you navigate the world of online casinos and find the right place to play.\n    </p>\n  </div>\n</section>\n\n\n\n[tcs_casino_summaries limit=\"30\"]\n\n\n\n<section class=\"tcs-section tcs-section--deep-navy\" style=\"text-align:left;\">\n  <div class=\"tcs-container\">\n    <h2 class=\"tcs-heading-xl\" style=\"color:#ffcc33;\">Explore Top Casino Rankings</h2>\n    <p class=\"tcs-text-lead\" style=\"font-size:1rem; line-height:1.8; color:#a8c7ff;\">\n      Our <strong>Top Casino Rankings</strong> page offers a detailed overview of the best online casinos available today, based on comprehensive factors like bonus value, payout speed, game selection, and customer service. Whether you're looking for high TCS scores or the best welcome offers, our rankings are designed to help you find the top-rated casinos to suit your preferences. Dive into the rankings to see how your favorite casinos measure up and discover new options for your next gaming session.\n    </p>\n    \n    <p style=\"font-size:1rem; line-height:1.8; color:#a8c7ff;\">\n      The rankings are updated regularly to provide players with the most current and reliable information. Our experts assess each casino based on strict criteria to ensure that only the best are listed. From game variety to fast payouts and high-quality bonuses, we\u2019ve got all the information you need to make confident choices. Let our rankings guide you to the top casinos that match your play style and expectations.\n    </p>\n\n    <p style=\"font-size:1rem; line-height:1.8; color:#a8c7ff;\">\n      Whether you\u2019re looking for high-paying slot casinos, top-rated live dealer experiences, or a specific game selection, our <strong>Top Casino Rankings</strong> will help you navigate the crowded world of online casinos. Our rankings are based on real player feedback, expert reviews, and up-to-date information about each casino's performance. Explore the list today and find out which casinos stand out in the competitive online gaming market.\n    </p>\n\n    <h3 style=\"color:#ffcc33;\">How We Rank Casinos</h3>\n    <p style=\"font-size:1rem; line-height:1.8; color:#a8c7ff;\">\n      The casinos featured in our <strong>Top Casino Rankings</strong> are selected based on an extensive review process that includes factors like TCS score, bonus value, wagering requirements, payout speed, customer support, and more. Our goal is to provide players with a trustworthy resource that they can rely on when choosing where to play. Our rankings are objective, transparent, and designed to help you find the best casino experience available.\n    </p>\n\n    <h3 style=\"color:#ffcc33;\">Explore Our Casino Rankings</h3>\n    <p style=\"font-size:1rem; line-height:1.8; color:#a8c7ff;\">\n      In addition to the rankings, we provide detailed insights and expert reviews for each casino. By browsing through our rankings, you\u2019ll get a clear picture of what each platform offers and whether it aligns with your gaming needs. Whether you\u2019re after a large welcome bonus, specific payment methods, or fast withdrawal times, our rankings can help guide you to the right choice. \n    </p>\n\n    <div class=\"tcs-button-group\" style=\"margin-top:30px; display:flex; flex-direction:column; gap:12px;\">\n      <a href=\"/how-we-rate\" class=\"tcs-btn-primary\" style=\"width:250px; text-align:center;\">\n        How We Rate Casinos\n      </a>\n      <a href=\"/casino-bonus-finder/\" class=\"tcs-btn-primary\" style=\"width:250px; text-align:center;\">\n        Online casino bonus finder\n      </a>\n      <a href=\"/about\" class=\"tcs-btn-primary\" style=\"width:250px; text-align:center;\">\n        About TopCasinoScout\n      </a>\n    </div>\n  </div>\n</section>";
+
+const title = "Top Casino Rankings 2026";
+const description = "TopCasinoScout's definitive casino rankings for 2026. Every casino scored using our TCS framework — licensing, bonus fairness, payout speed, and player protection.";
+
+const casinos = [
+  { name: "Vulkan Vegas", slug: "vulkanvegas-review", score: 7600, rating: 4.8, bonus: "€1,000 + 125 Free Spins", wagering: "40x", logo: "Vulkan-Vegas-Logo_192.webp", verdict: "Best all-round casino. Strong UX, fast support, transparent bonus terms.", tag: "🥇 #1 Overall" },
+  { name: "Wazamba", slug: "wazamba-review", score: 7400, rating: 4.7, bonus: "€500 + 200 Free Spins", wagering: "35x", logo: "Wazamba-Logo.jpg", verdict: "Excellent bonus value with reliable withdrawals and strong game selection.", tag: "🥈 Best Bonus" },
+  { name: "Verde Casino", slug: "verdecasino-review", score: 7200, rating: 4.6, bonus: "€300 + 100 Free Spins", wagering: "30x", logo: "VerdeCasino-Logo-e1764159887222_192.webp", verdict: "Lowest wagering in our top 3. Great pick for players who want real cashouts.", tag: "🥉 Low Wagering" },
+  { name: "Fairspin", slug: "fairspin-casino-review", score: 7100, rating: 4.5, bonus: "€450 + 140 Free Spins", wagering: "30x", logo: "02-fairspin-casino-logo-e1764191839113-192.webp", verdict: "Top crypto casino with blockchain-verified fairness and instant payouts.", tag: "⚡ Crypto Pick" },
+  { name: "Alf Casino", slug: "get-alfcasino-bonus-code", score: 6900, rating: 4.4, bonus: "€200 + 50 Free Spins", wagering: "25x", logo: "04-alfcasino-192.webp", verdict: "Lowest wagering requirement in our rankings at just 25x. Great for withdrawals.", tag: "" },
+  { name: "Ice Casino", slug: "icecasino-review", score: 6800, rating: 4.3, bonus: "€1,500 + 270 Free Spins", wagering: "40x", logo: "IceCasino-Logo_192.webp", verdict: "Huge welcome package. Best pick for players wanting maximum free spins.", tag: "" },
+  { name: "Legiano", slug: "legiano-review", score: 6700, rating: 4.2, bonus: "€1,000 + 100 Free Spins", wagering: "35x", logo: "06-legiano-192.webp", verdict: "Solid mid-tier casino with consistent payout performance.", tag: "" },
+  { name: "Betico", slug: "betico-review", score: 6600, rating: 4.1, bonus: "€500 + 150 Free Spins", wagering: "35x", logo: "02-betico-192.webp", verdict: "Good all-rounder with strong game variety and fair bonus terms.", tag: "" },
+  { name: "Savaspin", slug: "savaspin-review", score: 6500, rating: 4.0, bonus: "€1,000 + 100 Free Spins", wagering: "40x", logo: "05-savaspin-192.webp", verdict: "Reliable operator with strong slot selection and regular promotions.", tag: "" },
+  { name: "Cadoola", slug: "cadoola-review", score: 6400, rating: 4.0, bonus: "€500 + 200 Free Spins", wagering: "35x", logo: "07-cadoola-192.webp", verdict: "Solid payout record and accessible bonus terms for most player types.", tag: "" },
+  { name: "Playfortuna", slug: "playfortuna-review", score: 6300, rating: 3.9, bonus: "€1,500 + 500 Free Spins", wagering: "40x", logo: "10-playfortuna-192.webp", verdict: "Massive free spins package. Best for slot enthusiasts.", tag: "" },
+  { name: "Azurslot", slug: "azurslot-review", score: 6200, rating: 3.9, bonus: "€800 + 200 Free Spins", wagering: "40x", logo: "09-azurslot-192.webp", verdict: "Decent mid-tier casino with a wide range of slot titles.", tag: "" },
+  { name: "Bankonbet", slug: "bankonbet-review", score: 6100, rating: 3.8, bonus: "€500 + 100 Free Spins", wagering: "40x", logo: "Bankonbet-Logo-e1764191977816_192.webp", verdict: "Reliable platform with sports betting and casino combined.", tag: "" },
+  { name: "SG Casino", slug: "sg-casino-review", score: 5900, rating: 3.7, bonus: "€500 + 100 Free Spins", wagering: "40x", logo: "08-sg-casino-192.webp", verdict: "Competent operator. Good for players looking for straightforward play.", tag: "" },
+  { name: "Mostbet", slug: "mostbet-review", score: 5800, rating: 3.7, bonus: "€300 + 250 Free Spins", wagering: "60x", logo: "04-mostbet-192.webp", verdict: "High wagering dampens an otherwise strong bonus. Proceed with caution.", tag: "⚠️ High Wagering" },
+  { name: "Vulkanbet", slug: "vulkanbet-review", score: 5700, rating: 3.6, bonus: "€1,000 + 200 Free Spins", wagering: "45x", logo: "VulkanBet-Logo_192.webp", verdict: "Solid sports + casino combo but higher-than-average wagering.", tag: "" },
+  { name: "Winshark", slug: "winshark-review", score: 5500, rating: 3.5, bonus: "€500 + 50 Free Spins", wagering: "40x", logo: "WinShark-Logo-e1764191961640.jpg", verdict: "Average performer. Acceptable for casual players.", tag: "" },
+  { name: "Imperial Wins", slug: "imperial-wins-review", score: 5200, rating: 3.4, bonus: "300% + 100 Free Spins", wagering: "40x", logo: "01-imperial-wins-192.webp", verdict: "High match percentage but average wagering terms.", tag: "" },
+  { name: "Satoshi Hero", slug: "satoshi-hero-premium-crypto-casino-review", score: 5000, rating: 3.3, bonus: "$700 Welcome Package", wagering: "30x", logo: "photo_5_2025-11-25_01-54-27_192.webp", verdict: "Best crypto-specific experience in our rankings.", tag: "₿ Crypto" },
+  { name: "1Win", slug: "1win-casino-bonus-code", score: 4800, rating: 3.2, bonus: "500% up to €1,000", wagering: "60x", logo: "03-1win-192.webp", verdict: "Very high wagering at 60x makes the headline bonus misleading.", tag: "⚠️ High Wagering" },
+];
+
+function ratingColor(r: number) {
+  if (r >= 4.5) return '#32C671';
+  if (r >= 4.0) return '#ffcc33';
+  if (r >= 3.5) return '#f4a800';
+  return '#ff9944';
+}
 ---
 <Layout title={title} description={description} slug="top-casino-rankings">
-  <div class="tcs-page-content" set:html={content} />
+
+<div class="rk-page">
+
+  <!-- HERO -->
+  <section class="rk-hero">
+    <div class="rk-container">
+      <div class="rk-badge"><span class="rk-dot"></span> UPDATED JUNE 2026 · TCS VERIFIED</div>
+      <h1>Top Casino Rankings 2026</h1>
+      <p class="rk-sub">Every casino scored using our proprietary TCS framework across licensing quality, bonus fairness, payout speed, support responsiveness and long-term reliability.</p>
+      <a href="https://44deal.com" target="_blank" rel="nofollow noopener sponsored" class="rk-mega-btn">
+        <span>🎯</span>
+        <span>
+          <span class="rk-mega-top">Claim The Best Ranked Bonus For Your Region →</span>
+          <span class="rk-mega-sub">AI-matched · Verified daily · Free to use</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- RANKINGS TABLE -->
+  <section class="rk-section">
+    <div class="rk-container">
+
+      <!-- HEADER ROW -->
+      <div class="rk-table-head">
+        <span class="rk-th-rank">Rank</span>
+        <span class="rk-th-casino">Casino</span>
+        <span class="rk-th-score">TCS Score</span>
+        <span class="rk-th-bonus">Welcome Bonus</span>
+        <span class="rk-th-wager">Wagering</span>
+        <span class="rk-th-actions"></span>
+      </div>
+
+      {casinos.map((casino, i) => (
+        <div class={`rk-row ${i < 3 ? 'rk-row--top' : ''}`}>
+          <div class="rk-cell-rank">
+            <span class="rk-rank-num">{i + 1}</span>
+            {i === 0 && <span class="rk-medal">🥇</span>}
+            {i === 1 && <span class="rk-medal">🥈</span>}
+            {i === 2 && <span class="rk-medal">🥉</span>}
+          </div>
+
+          <div class="rk-cell-casino">
+            <img
+              src={`/wp-content/uploads/2025/11/${casino.logo}`}
+              alt={`${casino.name}`}
+              class="rk-logo"
+              onerror="this.style.display='none'"
+            />
+            <div class="rk-casino-info">
+              <a href={`/${casino.slug}`} class="rk-casino-name">{casino.name}</a>
+              <div class="rk-verdict">{casino.verdict}</div>
+              {casino.tag && <span class="rk-tag">{casino.tag}</span>}
+            </div>
+          </div>
+
+          <div class="rk-cell-score">
+            <div class="rk-score-num" style={`color:${ratingColor(casino.rating)}`}>{casino.rating}/5</div>
+            <div class="rk-score-tcs">{casino.score.toLocaleString()}</div>
+          </div>
+
+          <div class="rk-cell-bonus">
+            <div class="rk-bonus-val">{casino.bonus}</div>
+          </div>
+
+          <div class="rk-cell-wager">
+            <div class={`rk-wager-badge ${parseInt(casino.wagering) <= 30 ? 'rk-wager--good' : parseInt(casino.wagering) >= 50 ? 'rk-wager--bad' : ''}`}>
+              {casino.wagering}
+            </div>
+          </div>
+
+          <div class="rk-cell-actions">
+            <a href={`/${casino.slug}`} class="rk-btn-review">Review</a>
+            <a href="https://44deal.com" target="_blank" rel="nofollow noopener sponsored" class="rk-btn-claim">Claim →</a>
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+  <!-- HOW WE RANK -->
+  <section class="rk-section rk-section--dark">
+    <div class="rk-container">
+      <h2 class="rk-section-title">How Our Rankings Work</h2>
+      <div class="rk-how-grid">
+        <div class="rk-how-card">
+          <div class="rk-how-icon">🛡️</div>
+          <h3>Licensing (25%)</h3>
+          <p>We tier every licence from Tier-1 (UKGC, MGA) through to Tier-3 offshore regulators. Higher-tier licences score more points.</p>
+        </div>
+        <div class="rk-how-card">
+          <div class="rk-how-icon">⚡</div>
+          <h3>Payout Speed (25%)</h3>
+          <p>We test real withdrawals via multiple payment methods and score based on speed, reliability and transparency of the process.</p>
+        </div>
+        <div class="rk-how-card">
+          <div class="rk-how-icon">🎁</div>
+          <h3>Bonus Fairness (25%)</h3>
+          <p>Wagering requirements, max cashout caps, game contributions and time limits are all factored in — not just headline figures.</p>
+        </div>
+        <div class="rk-how-card">
+          <div class="rk-how-icon">💬</div>
+          <h3>Support Quality (25%)</h3>
+          <p>Live chat tested with real questions about withdrawal rules and bonus terms. Response time and accuracy both scored.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/how-we-rate-online-casinos" class="rk-btn-secondary">Read Our Full Methodology →</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<style>
+  .rk-page { background: #05051b; }
+  .rk-container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .rk-section { padding: 48px 0; }
+  .rk-section--dark { background: #080829; }
+
+  /* Hero */
+  .rk-hero { background: linear-gradient(160deg, #0b0b2e 0%, #05051b 100%); padding: 64px 0 48px; text-align: center; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .rk-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(50,198,113,.12); border: 1px solid rgba(50,198,113,.35); border-radius: 999px; padding: 6px 16px; font-size: .72rem; font-weight: 700; letter-spacing: .1em; color: #32C671; text-transform: uppercase; margin-bottom: 20px; }
+  .rk-dot { width: 7px; height: 7px; background: #32C671; border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(1.4)} }
+  .rk-hero h1 { font-size: clamp(2rem,4vw,3rem); font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -.03em; }
+  .rk-sub { color: rgba(255,255,255,.65); font-size: 1rem; max-width: 600px; margin: 0 auto 32px; line-height: 1.7; }
+
+  /* Mega button */
+  .rk-mega-btn { display: inline-flex; align-items: center; gap: 14px; padding: 18px 32px; background: linear-gradient(135deg, #ffcc33 0%, #f4a800 100%); color: #05051b; border-radius: 14px; text-decoration: none; animation: glow 2.5s ease-in-out infinite; transition: transform .15s; max-width: 520px; }
+  .rk-mega-btn:hover { transform: translateY(-2px); text-decoration: none; animation: none; }
+  @keyframes glow { 0%,100%{box-shadow:0 0 0 0 rgba(255,204,51,.4)} 50%{box-shadow:0 0 0 10px rgba(255,204,51,0)} }
+  .rk-mega-top { display: block; font-size: 1.05rem; font-weight: 800; line-height: 1.2; }
+  .rk-mega-sub { display: block; font-size: .75rem; font-weight: 600; opacity: .7; margin-top: 3px; }
+
+  /* Table header */
+  .rk-table-head { display: grid; grid-template-columns: 60px 1fr 90px 1fr 80px 160px; gap: 12px; padding: 10px 20px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.35); border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 10px; }
+  @media (max-width: 900px) { .rk-table-head { display: none; } }
+
+  /* Rows */
+  .rk-row { display: grid; grid-template-columns: 60px 1fr 90px 1fr 80px 160px; gap: 12px; align-items: center; padding: 16px 20px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; margin-bottom: 10px; transition: border-color .2s, transform .15s; }
+  .rk-row:hover { border-color: rgba(255,204,51,.3); transform: translateY(-1px); }
+  .rk-row--top { border-color: rgba(255,204,51,.2); background: rgba(255,204,51,.03); }
+  @media (max-width: 900px) {
+    .rk-row { grid-template-columns: 48px 1fr auto; grid-template-rows: auto auto; }
+    .rk-cell-score { display: none; }
+    .rk-cell-wager { display: none; }
+    .rk-cell-bonus { grid-column: 1/3; grid-row: 2; }
+    .rk-cell-actions { grid-row: 1; }
+  }
+
+  .rk-cell-rank { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .rk-rank-num { font-size: 1rem; font-weight: 800; color: #ffcc33; }
+  .rk-medal { font-size: 1rem; }
+  .rk-cell-casino { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .rk-logo { width: 48px; height: 48px; object-fit: contain; border-radius: 9px; background: rgba(255,255,255,.07); padding: 4px; flex-shrink: 0; }
+  .rk-casino-info { min-width: 0; }
+  .rk-casino-name { font-weight: 700; font-size: .95rem; color: #fff; text-decoration: none; display: block; margin-bottom: 3px; }
+  .rk-casino-name:hover { color: #ffcc33; }
+  .rk-verdict { font-size: .75rem; color: rgba(255,255,255,.5); line-height: 1.4; }
+  .rk-tag { display: inline-block; margin-top: 4px; font-size: .68rem; font-weight: 700; color: #ffcc33; }
+  .rk-cell-score { text-align: center; }
+  .rk-score-num { font-size: 1.1rem; font-weight: 800; margin-bottom: 2px; }
+  .rk-score-tcs { font-size: .7rem; color: rgba(255,255,255,.35); }
+  .rk-cell-bonus { }
+  .rk-bonus-val { font-size: .85rem; font-weight: 700; color: #ffcc33; }
+  .rk-cell-wager { text-align: center; }
+  .rk-wager-badge { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700; background: rgba(255,255,255,.08); color: rgba(255,255,255,.6); }
+  .rk-wager--good { background: rgba(50,198,113,.12); color: #32C671; }
+  .rk-wager--bad { background: rgba(255,75,92,.12); color: #ff4b5c; }
+  .rk-cell-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .rk-btn-review { display: inline-flex; align-items: center; padding: 8px 14px; background: transparent; color: rgba(255,255,255,.7); font-weight: 600; font-size: .8rem; border-radius: 7px; border: 1px solid rgba(255,255,255,.15); text-decoration: none; transition: border-color .15s; white-space: nowrap; }
+  .rk-btn-review:hover { border-color: rgba(255,255,255,.4); text-decoration: none; }
+  .rk-btn-claim { display: inline-flex; align-items: center; padding: 8px 16px; background: #ffcc33; color: #05051b; font-weight: 700; font-size: .82rem; border-radius: 7px; text-decoration: none; white-space: nowrap; transition: background .15s; }
+  .rk-btn-claim:hover { background: #f4c045; text-decoration: none; }
+
+  /* How we rank */
+  .rk-section-title { font-size: clamp(1.4rem,3vw,2rem); font-weight: 800; color: #fff; text-align: center; margin-bottom: 32px; }
+  .rk-how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .rk-how-card { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 24px; text-align: center; }
+  .rk-how-icon { font-size: 1.8rem; margin-bottom: 12px; }
+  .rk-how-card h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+  .rk-how-card p { font-size: .85rem; color: rgba(255,255,255,.6); line-height: 1.6; }
+  .rk-btn-secondary { display: inline-flex; align-items: center; padding: 12px 24px; background: transparent; color: #fff; font-weight: 600; font-size: .92rem; border-radius: 9px; border: 1.5px solid rgba(255,204,51,.4); text-decoration: none; transition: border-color .15s, background .15s; }
+  .rk-btn-secondary:hover { border-color: #ffcc33; background: rgba(255,204,51,.08); text-decoration: none; }
+</style>
 
 <!-- internal-links-block -->
 <div class="internal-links-block">
   <div class="il-inner">
     <span class="il-label">📌 Related</span>
     <div class="il-links">
-      <a href="/detailed-casino-reviews" class="il-link">📋 Casino Reviews</a>
-      <a href="/casino-bonus-finder" class="il-link">🤖 AI Bonus Finder</a>
-      <a href="/no-deposit-bonuses" class="il-link">🎰 No Deposit Bonuses</a>
-      <a href="/casino-promo-codes" class="il-link">🎫 Promo Codes</a>
-      <a href="/free-spin-slots" class="il-link">🔄 Free Spins</a>
+      <a href="/detailed-casino-reviews" class="il-link">📋 All Reviews</a>
+      <a href="/top-casino-bonuses" class="il-link">🎁 Top Bonuses</a>
+      <a href="/no-deposit-bonuses" class="il-link">🎰 No Deposit</a>
+      <a href="/casino-bonus-finder" class="il-link">🤖 AI Finder</a>
+      <a href="/blacklisted-online-casinos" class="il-link">🚫 Blacklisted</a>
+      <a href="/how-we-rate-online-casinos" class="il-link">📊 How We Rate</a>
     </div>
   </div>
 </div>
 
-<style>
-  .internal-links-block {
-    background: rgba(255,204,51,.06);
-    border-top: 1px solid rgba(255,204,51,.2);
-    border-bottom: 1px solid rgba(255,204,51,.2);
-    padding: 18px 24px;
-    margin: 32px 0 0;
-  }
-  .il-inner {
-    max-width: 1140px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .il-label {
-    font-size: .75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    color: rgba(255,204,51,.8);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .il-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .il-link {
-    display: inline-flex;
-    align-items: center;
-    padding: 6px 14px;
-    background: rgba(255,255,255,.04);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 999px;
-    font-size: .8rem;
-    font-weight: 600;
-    color: rgba(255,255,255,.8);
-    text-decoration: none;
-    transition: border-color .15s, background .15s, color .15s;
-  }
-  .il-link:hover {
-    border-color: rgba(255,204,51,.5);
-    background: rgba(255,204,51,.08);
-    color: #ffcc33;
-    text-decoration: none;
-  }
-</style>
 </Layout>
