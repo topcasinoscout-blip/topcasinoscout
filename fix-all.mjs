@@ -1,4 +1,59 @@
----
+// TopCasinoScout — Fix all broken links + pages
+// Run with: node fix-all.mjs
+
+import { readFileSync, writeFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+const PAGES_DIR = './src/pages';
+
+// ── 1. FIX ALL BROKEN LINKS ACROSS ALL PAGES ─────────────────
+const linkFixes = [
+  // Affiliate
+  [/https?:\/\/chickroad\.info[^\s"']*/g, 'https://44deal.com'],
+  // Internal broken paths
+  [/href="\/casino-rankings\/?"/g, 'href="/top-casino-rankings"'],
+  [/href='\/casino-rankings\/?'/g, "href='/top-casino-rankings'"],
+  [/href="\/blacklisted-and-unsafe-casinos\/?"/g, 'href="/blacklisted-online-casinos"'],
+  [/href='\/blacklisted-and-unsafe-casinos\/?'/g, "href='/blacklisted-online-casinos'"],
+  [/href="\/how-we-rate\/?"/g, 'href="/how-we-rate-online-casinos"'],
+  [/href='\/how-we-rate\/?'/g, "href='/how-we-rate-online-casinos'"],
+  [/href="\/casino-reviews\/?"/g, 'href="/detailed-casino-reviews"'],
+  [/href='\/casino-reviews\/?'/g, "href='/detailed-casino-reviews'"],
+  [/href="\/united-kingdom-bonus\/?"/g, 'href="/uk-casino-bonus"'],
+  [/href='\/united-kingdom-bonus\/?'/g, "href='/uk-casino-bonus'"],
+  [/href="\/ireland-bonus\/?"/g, 'href="/ireland-casino-bonus"'],
+  [/href="\/canada-bonus\/?"/g, 'href="/canada-casino-bonus"'],
+  [/href="\/new-zealand-bonus\/?"/g, 'href="/new-zealand-casino-bonus"'],
+  [/href="\/united-states-bonus\/?"/g, 'href="/usa-casino-bonus"'],
+  // Remove trailing slashes from internal links
+  [/href="\/([\w-]+)\/"/g, 'href="/$1"'],
+  [/href='\/([\w-]+)\/'/g, "href='/$1'"],
+  // Fix localhost
+  [/https?:\/\/localhost(:\d+)?(\/wordpress)?/g, ''],
+  // Fix dead worker URLs - replace with 44deal
+  [/https?:\/\/[a-z0-9-]+\.workers\.dev[^\s"']*/g, 'https://44deal.com'],
+];
+
+let totalPages = 0;
+
+const files = readdirSync(PAGES_DIR).filter(f => f.endsWith('.astro'));
+for (const fname of files) {
+  const fpath = join(PAGES_DIR, fname);
+  let content = readFileSync(fpath, 'utf-8');
+  const original = content;
+  for (const [pattern, replacement] of linkFixes) {
+    content = content.replace(pattern, replacement);
+  }
+  if (content !== original) {
+    writeFileSync(fpath, content, 'utf-8');
+    totalPages++;
+    console.log(`  Fixed: ${fname}`);
+  }
+}
+console.log(`\n✅ Link fixes complete — ${totalPages} pages updated`);
+
+// ── 2. FIX TCSDROPS PAGE ─────────────────────────────────────
+const tcsdropContent = `---
 import Layout from '../layouts/Layout.astro';
 const title = "TCS Drops — Exclusive Stream Rewards";
 const description = "TCS Drops — Exclusive stream-only casino bonus offers. Enter your access code to unlock this month's private viewer reward.";
@@ -88,4 +143,67 @@ const description = "TCS Drops — Exclusive stream-only casino bonus offers. En
   if(codeInput){codeInput.onkeydown=function(e){if(e.key==='Enter'){e.preventDefault();check();}};codeInput.oninput=function(){if(codeError)codeError.style.display='none';};}
 })();
 </script>
-</Layout>
+</Layout>`;
+
+writeFileSync(join(PAGES_DIR, 'tcsdrops.astro'), tcsdropContent, 'utf-8');
+console.log('✅ tcsdrops.astro rebuilt (no Worker dependency)');
+
+// ── 3. FIX MIA PAGE (empty) ───────────────────────────────────
+const miaContent = `---
+import Layout from '../layouts/Layout.astro';
+const title = "Page Not Found";
+const description = "This page could not be found. Return to TopCasinoScout for casino reviews, bonuses and rankings.";
+---
+<Layout title={title} description={description} slug="mia">
+  <div style="max-width:640px;margin:80px auto;padding:0 24px;text-align:center;">
+    <div style="font-size:4rem;margin-bottom:20px;">🔍</div>
+    <h1 style="font-size:2rem;font-weight:800;margin-bottom:12px;">This page has moved</h1>
+    <p style="color:rgba(255,255,255,.65);margin-bottom:32px;line-height:1.7;">The page you're looking for isn't here. Try one of these instead:</p>
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:320px;margin:0 auto;">
+      <a href="/" style="display:block;padding:14px 24px;background:#ffcc33;color:#05051b;font-weight:700;border-radius:10px;text-decoration:none;">🏠 Go to Homepage</a>
+      <a href="/top-casino-bonuses" style="display:block;padding:13px 24px;border:1.5px solid rgba(255,204,51,.4);color:#fff;font-weight:600;border-radius:10px;text-decoration:none;">🎁 Top Casino Bonuses</a>
+      <a href="/detailed-casino-reviews" style="display:block;padding:13px 24px;border:1.5px solid rgba(255,204,51,.4);color:#fff;font-weight:600;border-radius:10px;text-decoration:none;">📋 Casino Reviews</a>
+      <a href="/casino-bonus-finder" style="display:block;padding:13px 24px;border:1.5px solid rgba(255,204,51,.4);color:#fff;font-weight:600;border-radius:10px;text-decoration:none;">🤖 AI Bonus Finder</a>
+    </div>
+  </div>
+</Layout>`;
+
+writeFileSync(join(PAGES_DIR, 'mia.astro'), miaContent, 'utf-8');
+console.log('✅ mia.astro rebuilt as 404-style redirect page');
+
+// ── 4. FIX STREAM PAGE ────────────────────────────────────────
+const streamContent = `---
+import Layout from '../layouts/Layout.astro';
+const title = "Live Casino Streams & Exclusive Offers";
+const description = "TopCasinoScout live casino stream content on YouTube and Kick. Access exclusive stream-only promotions and verified bonus offers.";
+---
+<Layout title={title} description={description} slug="stream">
+  <div class="tcs-page-content">
+    <div class="tcs-label-pill">Live Stream Content • Verified Offers</div>
+    <h1>Live Casino Streams &amp; Exclusive Offers</h1>
+    <p class="tcs-text-lead">At TopCasinoScout, we create and share live casino stream content across platforms including YouTube and Kick. Our streams focus on real gameplay, platform testing, and identifying the strongest available promotions in real time.</p>
+    <div class="tcs-review-block">
+      <span class="tcs-label-pill">Exclusive Offers</span>
+      <h2>Stream-Only Bonus Access</h2>
+      <p>Through verified partnerships, we provide access to exclusive stream offers and promotions that are not always publicly available. These offers are selected based on value, transparency, and availability.</p>
+      <div class="tcs-hero-ctas">
+        <a href="/tcsdrops" class="tcs-btn-primary">🎁 Enter TCS Drops</a>
+        <a href="/casino-bonus-finder" class="tcs-btn-secondary">🤖 AI Bonus Finder</a>
+      </div>
+    </div>
+    <div class="tcs-review-block">
+      <span class="tcs-label-pill">Platforms</span>
+      <h2>Where to Watch</h2>
+      <p>Follow our live streams on YouTube and Kick for real-time bonus reveals, casino testing, and exclusive viewer rewards. Join our Telegram for instant notifications when drops go live.</p>
+      <div class="tcs-hero-ctas">
+        <a href="https://t.me/tcsdrops" target="_blank" rel="noopener nofollow" class="tcs-btn-secondary">📱 Join Telegram</a>
+      </div>
+    </div>
+    <p style="font-size:.78rem;color:rgba(255,255,255,.35);margin-top:24px;">18+ · Play responsibly · Content for informational purposes only</p>
+  </div>
+</Layout>`;
+
+writeFileSync(join(PAGES_DIR, 'stream.astro'), streamContent, 'utf-8');
+console.log('✅ stream.astro rebuilt cleanly');
+
+console.log('\n✅ All fixes complete! Run: git add . && git commit -m "Fix broken links and rebuild pages" && git push');
