@@ -13,6 +13,14 @@ const canonical = `https://topcasinoscout.com/${slug}`;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C88RMJRDMX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C88RMJRDMX');
+  </script>
   <title>{title} | TopCasinoScout</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
