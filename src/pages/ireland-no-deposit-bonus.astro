@@ -6,4 +6,70 @@ const content = "<section class=\"tcs-section tcs-section--deep-navy\">\n  <div 
 ---
 <Layout title={title} description={description} slug="ireland-no-deposit-bonus">
   <div class="tcs-page-content" set:html={content} />
+
+<!-- internal-links-block -->
+<div class="internal-links-block">
+  <div class="il-inner">
+    <span class="il-label">📌 Related</span>
+    <div class="il-links">
+      <a href="/ireland" class="il-link">🌍 Ireland Hub</a>
+      <a href="/top-casino-bonuses" class="il-link">🎁 Best Casino Bonuses</a>
+      <a href="/no-deposit-bonuses" class="il-link">🎰 No Deposit Bonuses</a>
+      <a href="/detailed-casino-reviews" class="il-link">📋 Casino Reviews</a>
+      <a href="/casino-bonus-finder" class="il-link">🤖 AI Bonus Finder</a>
+      <a href="/top-casino-rankings" class="il-link">🏆 Casino Rankings</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .internal-links-block {
+    background: rgba(255,204,51,.06);
+    border-top: 1px solid rgba(255,204,51,.2);
+    border-bottom: 1px solid rgba(255,204,51,.2);
+    padding: 18px 24px;
+    margin: 32px 0 0;
+  }
+  .il-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .il-label {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: rgba(255,204,51,.8);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .il-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .il-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.8);
+    text-decoration: none;
+    transition: border-color .15s, background .15s, color .15s;
+  }
+  .il-link:hover {
+    border-color: rgba(255,204,51,.5);
+    background: rgba(255,204,51,.08);
+    color: #ffcc33;
+    text-decoration: none;
+  }
+</style>
 </Layout>
