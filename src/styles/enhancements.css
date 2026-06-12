@@ -1,0 +1,23 @@
+/* ============================================================
+   TopCasinoScout — Site-Wide Design Enhancement Part 1
+   Typography, layout, sections, containers
+   ============================================================ */
+
+.tcs-page-content { max-width:1140px; margin:0 auto; padding:40px 24px 64px; }
+.tcs-page-content h1,.tcs-heading-xl,.tcs-review-heading { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800; line-height:1.1; letter-spacing:-.03em; color:#fff; margin-bottom:20px; }
+.tcs-page-content h2,.tcs-heading-lg { font-size:clamp(1.3rem,2.5vw,1.9rem); font-weight:700; color:#fff; margin:36px 0 14px; line-height:1.2; }
+.tcs-page-content h3,.tcs-heading-md,.tcs-heading-sm { font-size:clamp(1rem,1.8vw,1.3rem); font-weight:700; color:#fff; margin:24px 0 10px; }
+.tcs-page-content p,.tcs-text,.tcs-text-lead,.tcs-review-intro { color:rgba(255,255,255,.75); line-height:1.75; margin-bottom:16px; font-size:.97rem; }
+.tcs-text-lead,.tcs-review-intro { font-size:1.08rem; color:rgba(255,255,255,.82); }
+.tcs-text-lead--narrow { max-width:680px; }
+.tcs-page-content strong { color:#fff; }
+.tcs-page-content a,.tcs-link { color:#ffcc33; text-decoration:none; }
+.tcs-page-content a:hover,.tcs-link:hover { text-decoration:underline; }
+.tcs-text-muted { color:rgba(255,255,255,.45); font-size:.85rem; }
+.tcs-tagline { color:rgba(255,255,255,.5); font-size:.88rem; font-style:italic; }
+.tcs-page-content ul,.tcs-page-content ol { margin:12px 0 18px 20px; color:rgba(255,255,255,.75); }
+.tcs-page-content li { margin-bottom:8px; line-height:1.65; }
+.tcs-section { padding:56px 0; }
+.tcs-section--navy,.tcs-section--deep-navy { background:#05051b; }
+.tcs-section--dark { background:#080829; }
+.tcs-container { max-width:1140px; margin:0 auto; padding:0 24px; }

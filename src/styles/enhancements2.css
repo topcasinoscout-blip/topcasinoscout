@@ -1,0 +1,59 @@
+/* ============================================================
+   TopCasinoScout — Site-Wide Design Enhancement Part 2
+   Components: pills, blocks, buttons, cards, hero, stars
+   ============================================================ */
+
+/* ── LABEL PILLS ── */
+.tcs-label-pill { display:inline-flex; align-items:center; padding:4px 12px; background:rgba(255,204,51,.1); border:1px solid rgba(255,204,51,.3); border-radius:999px; font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#ffcc33; margin-bottom:12px; }
+
+/* ── REVIEW BLOCKS ── */
+.tcs-review-block { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:28px; margin-bottom:20px; transition:border-color .2s; }
+.tcs-review-block:hover { border-color:rgba(255,204,51,.2); }
+.tcs-verdict-box { background:rgba(255,204,51,.06)!important; border-color:rgba(255,204,51,.25)!important; }
+.tcs-verdict-highlight { font-size:1.05rem; font-weight:600; color:rgba(255,255,255,.9)!important; }
+.tcs-feature-block { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); border-left:3px solid #ffcc33; border-radius:0 12px 12px 0; padding:18px 22px; margin:20px 0; }
+
+/* ── BUTTONS ── */
+.tcs-btn-primary,.tcs-hero-btn-primary { display:inline-flex!important; align-items:center; gap:8px; padding:13px 28px!important; background:#ffcc33!important; color:#05051b!important; font-weight:700!important; font-size:.95rem!important; border-radius:9px!important; text-decoration:none!important; border:none!important; cursor:pointer; transition:background .15s,transform .12s!important; white-space:nowrap; }
+.tcs-btn-primary:hover,.tcs-hero-btn-primary:hover { background:#f4c045!important; transform:translateY(-1px); text-decoration:none!important; }
+.tcs-btn-secondary,.tcs-hero-btn-secondary { display:inline-flex!important; align-items:center; gap:8px; padding:12px 24px!important; background:transparent!important; color:rgba(255,255,255,.9)!important; font-weight:600!important; font-size:.92rem!important; border-radius:9px!important; border:1.5px solid rgba(255,204,51,.4)!important; text-decoration:none!important; transition:border-color .15s,background .15s!important; }
+.tcs-btn-secondary:hover,.tcs-hero-btn-secondary:hover { border-color:#ffcc33!important; background:rgba(255,204,51,.08)!important; text-decoration:none!important; }
+.tcs-hero-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-top:20px; }
+
+/* ── FEATURE LINK CARDS ── */
+.tcs-feature-link { display:block!important; padding:16px 18px; border-radius:14px; background:rgba(255,255,255,.03)!important; border:1px solid rgba(255,255,255,.1)!important; text-decoration:none!important; color:#fff!important; transition:border-color .2s,background .2s,transform .15s; }
+.tcs-feature-link:hover { border-color:rgba(255,204,51,.4)!important; background:rgba(255,204,51,.04)!important; transform:translateY(-2px); text-decoration:none!important; }
+.tcs-feature-link strong { color:#ffcc33; font-size:.95rem; }
+.tcs-feature-link span { color:rgba(255,255,255,.6); }
+
+/* ── HUB / INSIGHT / FAQ CARDS ── */
+.tcs-hub-card,.tcs-insight-card,.tcs-faq-card { border-radius:16px!important; padding:22px!important; background:rgba(255,255,255,.03)!important; border:1px solid rgba(255,255,255,.1)!important; transition:border-color .2s,transform .15s; }
+.tcs-hub-card:hover,.tcs-insight-card:hover,.tcs-faq-card:hover { border-color:rgba(255,204,51,.3)!important; transform:translateY(-2px); }
+.tcs-hub-card h3,.tcs-insight-card h3,.tcs-faq-card h3 { color:#fff!important; font-size:1rem!important; font-weight:700!important; margin-bottom:10px!important; }
+.tcs-hub-card p,.tcs-insight-card p,.tcs-faq-card p { font-size:.88rem!important; color:rgba(255,255,255,.7)!important; line-height:1.65!important; }
+
+/* ── REVIEW HERO ── */
+.tcs-review-hero { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.1); border-radius:20px; padding:28px; margin:28px 0 36px; }
+.tcs-review-hero-topline { font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,204,51,.7); margin-bottom:16px; }
+.tcs-review-logo-circle { width:72px; height:72px; border-radius:14px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); overflow:hidden; flex-shrink:0; display:flex; align-items:center; justify-content:center; padding:6px; }
+.tcs-review-logo-circle img { width:100%; height:100%; object-fit:contain; }
+img[src*="placeholder"],img[src*="via.placeholder"] { display:none!important; }
+
+/* ── SCORE PILL ── */
+.tcs-score-pill { background:rgba(255,204,51,.12); border:1px solid rgba(255,204,51,.35); border-radius:12px; padding:12px 18px; text-align:center; }
+.tcs-score-pill-label { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,204,51,.7); margin-bottom:4px; }
+.tcs-score-pill-value { font-size:1.2rem; font-weight:800; color:#ffcc33; }
+.tcs-mini-key { font-size:.75rem; color:rgba(255,255,255,.45); line-height:1.5; max-width:240px; text-align:right; }
+.tcs-hero-bonus-line { background:rgba(50,198,113,.08); border:1px solid rgba(50,198,113,.2); border-radius:10px; padding:12px 16px; font-size:.9rem; color:rgba(255,255,255,.8); margin:16px 0; }
+
+/* ── STAR RATINGS ── */
+.tcs-stars { position:relative; display:inline-block; font-size:1.1rem; }
+.tcs-stars-base { color:rgba(255,255,255,.2); display:flex; gap:2px; }
+.tcs-stars-fill { position:absolute; top:0; left:0; overflow:hidden; width:var(--tcs-fill,80%); display:flex; gap:2px; color:#ffcc33; }
+.tcs-rating-text { font-size:.88rem; color:rgba(255,255,255,.6); font-weight:600; }
+
+/* ── TABLES ── */
+.tcs-page-content table { width:100%; border-collapse:collapse; margin:20px 0; font-size:.9rem; }
+.tcs-page-content th { background:rgba(255,255,255,.07); color:#fff; padding:12px 16px; text-align:left; font-weight:700; font-size:.82rem; text-transform:uppercase; letter-spacing:.05em; }
+.tcs-page-content td { padding:12px 16px; color:rgba(255,255,255,.75); border-bottom:1px solid rgba(255,255,255,.06); }
+.tcs-page-content tr:last-child td { border-bottom:none; }
